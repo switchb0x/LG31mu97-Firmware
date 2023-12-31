@@ -9,7 +9,8 @@ To address this issue, you can consider reprogramming the EEPROM chip using a CH
 ## Firmware Repair Steps
 
 1. **Obtain the Necessary Hardware:**
-   - Purchase a CH341A SPI Programmer with a SOP8 clip. You can find these on various online marketplaces.
+   - Purchase a CH341A SPI Programmer with a SOP8 clip. You can find these on various online marketplaces. Here is an example of one on amazon:
+![image](https://github.com/switchb0x/LG31mu97-Firmware/assets/65792132/002a8b0f-83f2-4429-94de-3673cba190f3)
 
 2. **Connect the Hardware:**
    - Plug the CH341A programmer into a USB port on your computer.
@@ -45,6 +46,7 @@ Using NeoProgrammer (GUI-based Option)
 If you prefer a GUI-based approach, you can use NeoProgrammer, a graphical programming tool for EEPROM chips. Follow these steps:
 
 **Download NeoProgrammer:**
+![image](https://github.com/switchb0x/LG31mu97-Firmware/assets/65792132/a5884c34-f55f-4192-b262-32a525cb01a9)
 
 Download NeoProgrammer from the official website: NeoProgrammer.
 Connect the Hardware:
@@ -52,6 +54,8 @@ Connect the Hardware:
 Ensure your CH341A programmer with the SOP8 clip is connected to the EEPROM IC205 on the monitor's mainboard, **leave the monitor unplugged from all power**. The device is a 25x (SPI NOR FLASH) so place the breakout board as indicated on the programmer.
 
 Launch NeoProgrammer on your computer. If the clip is attached to the prom chip, you can selecte detect within the neoprogrammer and it should pull up a few options. select the same as the flash chip indicates (the part number is laser-printed directly on the flash chip).
+![image](https://github.com/switchb0x/LG31mu97-Firmware/assets/65792132/d20354a1-5cb8-44c7-bc1e-1ff93e511d02)
+
 
 In NeoProgrammer, configure the settings for your EEPROM chip (MX25L8006EM2I-12G).
 Read and Write Firmware:
