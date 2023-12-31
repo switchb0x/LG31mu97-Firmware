@@ -12,34 +12,25 @@ To address this issue, you can consider reprogramming the EEPROM chip using a CH
    - Purchase a CH341A SPI Programmer with a SOP8 clip. You can find these on various online marketplaces. Here is an example of one on amazon:
 ![image](https://github.com/switchb0x/LG31mu97-Firmware/assets/65792132/002a8b0f-83f2-4429-94de-3673cba190f3)
 
-2. **Connect the Hardware:**
-   - Plug the CH341A programmer into a USB port on your computer.
-   - Attach the SOP8 clip to the programmer.
-   - Connect the SOP8 clip to the EEPROM IC205 on the monitor's mainboard.
+2. **Accessing the Hardware:**
+   - Begin by removing the backshell of the monitor. To do this, first take out the four Phillips screws holding the monitor stand bracket in place.
+   - Carefully work your way around the monitor's bezel using a spudger or similar tool to release the clips. It's okay to apply some force during this process.
+   - Inside the backshell, you'll notice a large thermal pad (approximately 4"x4") in the center. This pad helps dissipate heat from the electronics and may initially feel stuck. Gently apply consistent force to release it. You can speed up this process by using a flat tool, such as a ruler, to assist. The adherence is similar to that of a cell phone screen protector.
+   - Once the backshell is off, unplug the cables on the side of the electronics box. Note that the two cables going to the corners are identical and can be interchanged without issues.
+   - Remove the screws securing the electronics box. If the monitor's power button is facing you during disassembly, the cords will be on the right side of the electronics box.
+   - The electronics box opens like a clamshell, away from you. Imagine you're opening a lid to a storage chest. The monitor display cables are designed to allow you to flip the electronics box completely, giving you access to the PROM device that you'll reprogram.
 
-3. **Perform the Reprogramming:**
-   - On your Linux computer, open a terminal and run the following commands:
-   
-   ```bash
-   $ sudo flashrom --programmer ch341a_spi -r backup.bin
-   ```
+3. **Performing the Reprogramming:**
 
-This command backs up the existing firmware to "backup.bin."
+   Note: When using the CH341A programmer, you'll need to connect it to a breakout board and then attach an IC clip to that breakout board. Here are some important considerations:
+   - Pay close attention to the proper orientation and position of the breakout board. Ensure that pin 1 is correctly identified on all connectors, including the IC clip (typically indicated by the presence of a red wire). Proper alignment is crucial to prevent errors during programming.
 
-Copy code
-```
-$ sudo flashrom --programmer ch341a_spi -w lg31mu97.bin
-```
-This command writes the new firmware (downloaded from here) to the EEPROM.
+   Note: Be cautious about the voltage supplied by the CH341A programmer. It operates at 5V, which may be higher than the EEPROM's required voltage of 3.3V. Consider modifying the CH341A to use the correct voltage if necessary.
 
-Note: Be cautious about the voltage supplied by the CH341A programmer. It operates at 5V, which may be higher than the EEPROM's required voltage of 3.3V. Consider modifying the CH341A to use the correct voltage if necessary.
+## GUI Programmer Approach
+**Using NeoProgrammer (GUI-based Option)**
 
-Verify the Repair:
-
-If the reprogramming process completes without errors, you can attempt to power on the monitor. Check for any improvements in its functionality.
-
-**Alternative Solution:**
-If you encounter difficulties with reprogramming or wish to avoid potential risks to the EEPROM, you can seek professional assistance. Pete's Computers (Manchester, UK) is one option for reprogramming the IC205 chip.
+If you prefer a GUI-based approach, you can use NeoProgrammer, a graphical programming tool for EEPROM chips. Follow these steps:
 
 ## GUI programmer approach
 Using NeoProgrammer (GUI-based Option)
@@ -55,7 +46,6 @@ Ensure your CH341A programmer with the SOP8 clip is connected to the EEPROM IC20
 
 Launch NeoProgrammer on your computer. If the clip is attached to the prom chip, you can selecte detect within the neoprogrammer and it should pull up a few options. select the same as the flash chip indicates (the part number is laser-printed directly on the flash chip).
 ![image](https://github.com/switchb0x/LG31mu97-Firmware/assets/65792132/d20354a1-5cb8-44c7-bc1e-1ff93e511d02)
-
 
 In NeoProgrammer, configure the settings for your EEPROM chip (MX25L8006EM2I-12G).
 Read and Write Firmware:
