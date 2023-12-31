@@ -27,11 +27,6 @@ To address this issue, you can consider reprogramming the EEPROM chip using a CH
 
    Note: Be cautious about the voltage supplied by the CH341A programmer. It operates at 5V, which may be higher than the EEPROM's required voltage of 3.3V. Consider modifying the CH341A to use the correct voltage if necessary.
 
-## GUI Programmer Approach
-**Using NeoProgrammer (GUI-based Option)**
-
-If you prefer a GUI-based approach, you can use NeoProgrammer, a graphical programming tool for EEPROM chips. Follow these steps:
-
 ## GUI programmer approach
 Using NeoProgrammer (GUI-based Option)
 If you prefer a GUI-based approach, you can use NeoProgrammer, a graphical programming tool for EEPROM chips. Follow these steps:
