@@ -23,7 +23,9 @@ To address this issue, you can consider reprogramming the EEPROM chip using a CH
 3. **Performing the Reprogramming:**
 
    Note: When using the CH341A programmer, you'll need to connect it to a breakout board and then attach an IC clip to that breakout board. Here are some important considerations:
-   - Pay close attention to the proper orientation and position of the breakout board. Ensure that pin 1 is correctly identified on all connectors, including the IC clip (typically indicated by the presence of a red wire). Proper alignment is crucial to prevent errors during programming.
+   - Pay close attention to the proper orientation and position of the breakout board. Ensure that pin 1 is correctly identified on all connectors, including the IC clip (typically indicated by the presence of a red wire). Proper alignment is crucial to prevent errors during programming. The breakout board should be place with pin 1 as shown, farthest from the lever on the socket:
+![image](https://github.com/switchb0x/LG31mu97-Firmware/assets/65792132/ffce87fd-1281-4348-9a86-95d24776879f)
+
 
    Note: Be cautious about the voltage supplied by the CH341A programmer. It operates at 5V, which may be higher than the EEPROM's required voltage of 3.3V. Consider modifying the CH341A to use the correct voltage if necessary.
 
